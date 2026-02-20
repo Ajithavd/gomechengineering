@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5.1%;
+
+    --primary: 22 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 94.9%;
+    --secondary-foreground: 0 0% 5.1%;
+
+    --muted: 0 0% 94.9%;
+    --muted-foreground: 0 0% 45.9%;
+
+    --accent: 0 0% 94.9%;
+    --accent-foreground: 0 0% 5.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 22 100% 50%;
+
+    --radius: 0.5rem;
+
+    --dark: 0 0% 5.1%;
+    --dark-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 5.1%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 5.1%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5.1%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 22 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 10.6%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 10.6%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 10.6%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 10.6%;
+    --input: 0 0% 10.6%;
+    --ring: 22 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+
+
+.scene {
+  width: 100%;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 53em;
+  overflow: hidden;
+
+  mask: linear-gradient(
+    90deg,
+    transparent,
+    black 5% 95%,
+    transparent
+  );
+}
+
+
+.a3d {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+  animation: rotateYCarousel 30s linear infinite;
+}
+
+@keyframes rotateYCarousel {
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+.card {
+  --w: 22em; /* Bigger cards */
+  --ba: calc(1turn / var(--n));
+
+  grid-area: 1 / 1;
+  width: var(--w);
+  aspect-ratio: 6 / 10;
+  object-fit: cover;
+  border-radius: 1.5em;
+
+  backface-visibility: hidden;
+
+  transform:
+    rotateY(calc(var(--i) * var(--ba)))
+    translateZ(
+      calc(
+        -1 *
+          (.6 * var(--w) + 1em) /
+          tan(.5 * var(--ba))
+      )
+    );
+
+  /* box-shadow: 0 60px 120px rgba(0, 0, 0, 0.2); */
+}
+
+
+
+
+
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+
