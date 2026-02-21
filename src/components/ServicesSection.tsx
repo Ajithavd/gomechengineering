@@ -6,24 +6,27 @@ const services = [
     title: "Brand Identity Design",
     description:
       "Logos, typography, color systems, and complete visual direction.",
+    image: "/images/gallery1.jpeg",
   },
   {
     tagline: "Clarity behind the visuals.",
     title: "Brand Strategy",
     description:
       "Positioning, messaging, and creative direction aligned with your goals.",
+    image: "/images/gallery2.png",
   },
   {
     tagline: "Ongoing expert guidance.",
     title: "Creative Consulting",
     description:
       "Ongoing design support, art direction, and guidance for your brand team.",
+    image: "/images/gallery3.jpeg",
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section className="w-full py-16 md:py-[100px] px-6 md:px-10 lg:px-[160px] overflow-hidden">
+    <section  className="w-full py-16 md:py-[100px] px-6 md:px-10 lg:px-[160px] overflow-hidden">
       <div className="max-w-[1600px] mx-auto">
         {/* Separator */}
         <div className="w-full h-[5px] rounded-[10px] bg-secondary mb-16 lg:mb-[200px]" />
@@ -57,17 +60,26 @@ const ServicesSection = () => {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-secondary rounded-[30px] p-10 flex flex-col justify-end h-[400px] md:h-[500px]"
+              className="group relative bg-secondary rounded-[30px] p-10 flex flex-col justify-end h-[400px] md:h-[500px] overflow-hidden"
             >
-              <div className="w-full h-[5px] rounded-[10px] bg-primary mb-auto mt-0" />
-              <div>
+              {/* Background Image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
+                style={{ backgroundImage: `url(${service.image})` }}
+              />
+
+              {/* Optional Dark Overlay */}
+              <div className="absolute inset-0 bg-black/30" />
+
+              {/* Content */}
+              <div className="relative">
                 <span className="text-primary font-bold text-xl leading-6 tracking-[-0.4px]">
                   {service.tagline}
                 </span>
-                <h3 className="text-foreground font-extrabold text-[30px] leading-9 mt-4">
+                <h3 className="text-white font-extrabold text-[30px] leading-9 mt-4">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-[22px] mt-4">
+                <p className="text-white text-sm leading-[22px] mt-4">
                   {service.description}
                 </p>
               </div>

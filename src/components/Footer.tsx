@@ -9,7 +9,7 @@ const quickLinks = [
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-dark text-dark-foreground">
+    <footer id="contact" className="w-full bg-dark text-dark-foreground">
       <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[160px] py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}

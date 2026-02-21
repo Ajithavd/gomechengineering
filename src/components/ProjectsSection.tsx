@@ -39,7 +39,7 @@ const projects: Project[] = [
       "Tight tolerances",
       "Batch & custom production",
     ],
-    image: "/images/hero2.jpg",
+    image: "/images/hero5.jpg",
     imagePosition: "left",
   },
   {
@@ -59,7 +59,7 @@ const projects: Project[] = [
       "Durable industrial applications",
       "Multiple welding processes",
     ],
-    image: "/images/hero5.jpg",
+    image: "/images/hero7.jpg",
     imagePosition: "left",
   },
 ];

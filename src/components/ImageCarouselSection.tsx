@@ -80,17 +80,17 @@
 
 
 const images = [
-  "/images/hero1.jpg",
-  "/images/hero2.jpg",
-  "/images/hero3.jpg",
-  "/images/hero4.jpg",
-  "/images/hero5.jpg",
-  "/images/hero6.jpg",
-  "/images/hero7.jpg",
-  "/images/hero1.jpg",
-  "/images/hero2.jpg",
-  "/images/hero3.jpg",
-  "/images/hero4.jpg",
+  "/images/gallery1.jpeg",
+  "/images/gallery2.png",
+  "/images/gallery3.jpeg",
+  "/images/gallery4.png",
+  "/images/gallery5.jpeg",
+  "/images/gallery6.png",
+  "/images/gallery7.jpeg",
+  "/images/gallery8.png",
+  "/images/gallery9.jpeg",
+  "/images/gallery10.jpeg",
+  "/images/gallery1.jpeg",
 ];
 
 const ImageCarouselSection = () => {
@@ -98,8 +98,8 @@ const ImageCarouselSection = () => {
 
   return (
     <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen py-24 bg-white overflow-hidden">
-      <div className="text-center mb-16">
-        <h3 className="text-primary font-bold text-[28px]">
+      <div className="text-center mb-1">
+        <h3 className="text-primary font-bold text-[48px]">
           Our Machinery & Infrastructure
         </h3>
       </div>

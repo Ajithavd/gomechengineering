@@ -5,47 +5,47 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 const galleryItems = [
   {
-    src: "/images/about1.jpg",
+    src: "/images/gallery1.jpeg",
     alt: "Dream Area Project",
     quote: "Precision is not just a goal — it's our standard.",
   },
   {
-    src: "/images/about2.jpg",
+    src: "/images/gallery2.png",
     alt: "CNC Machining",
     quote: "Engineering tomorrow's solutions, today.",
   },
   {
-    src: "/images/about1.jpg",
+    src: "/images/gallery3.jpeg",
     alt: "Orange Blox Project",
     quote: "Where innovation meets craftsmanship.",
   },
   {
-    src: "/images/about2.jpg",
+    src: "/images/gallery4.png",
     alt: "Metal Fabrication",
     quote: "Built with strength. Designed with purpose.",
   },
   {
-    src: "/images/about1.jpg",
+    src: "/images/gallery5.jpeg",
     alt: "Nova Scene Project",
     quote: "Every detail matters. Every weld counts.",
   },
   {
-    src: "/images/about2.jpg",
+    src: "/images/gallery6.png",
     alt: "Industrial Welding",
     quote: "Turning raw materials into masterpieces.",
   },
   {
-    src: "/images/about1.jpg",
+    src: "/images/gallery7.jpeg",
     alt: "Strategy First",
     quote: "Quality that speaks for itself.",
   },
   {
-    src: "/images/hero3.jpg",
+    src: "/images/gallery8.png",
     alt: "Consistency",
     quote: "Consistency across every touchpoint.",
   },
   {
-    src: "/images/hero2.jpg",
+    src: "/images/gallery9.jpeg",
     alt: "Go Mech Engineering",
     quote: "Innovating Success, Delivering Excellence.",
   },

@@ -1,6 +1,6 @@
 const BentoSection = () => {
   return (
-    <section className="w-full py-16 md:py-[100px] px-6 md:px-10 lg:px-[160px] overflow-hidden">
+    <section id="services" className="w-full py-16 md:py-[100px] px-6 md:px-10 lg:px-[160px] overflow-hidden">
       <div className="max-w-[1600px] mx-auto">
         {/* Separator */}
         <div className="w-full h-[5px] rounded-[10px] bg-secondary mb-16 lg:mb-[200px]" />
@@ -28,7 +28,7 @@ const BentoSection = () => {
           {/* Box 1 - Large with image */}
           <div className="md:col-span-2 relative h-[400px] md:h-[600px] rounded-[30px] overflow-hidden">
             <img
-              src="/images/hero1.jpg"
+              src="/images/a2.jpeg"
               alt="Strategy First"
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
             />
@@ -69,7 +69,7 @@ const BentoSection = () => {
           {/* Box 4 - Large with image */}
           <div className="md:col-span-2 relative h-[400px] md:h-[600px] rounded-[30px] overflow-hidden">
             <img
-              src="/images/hero2.jpg"
+              src="/images/a3.jpeg"
               alt="Consistency Across Touchpoints"
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
             />
@@ -88,7 +88,7 @@ const BentoSection = () => {
           {/* Box 5 - Large with image */}
           <div className="md:col-span-2 relative h-[400px] md:h-[600px] rounded-[30px] overflow-hidden">
             <img
-              src="/images/hero4.jpg"
+              src="/images/a1.jpeg"
               alt="Consistency Across Touchpoints"
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
             />

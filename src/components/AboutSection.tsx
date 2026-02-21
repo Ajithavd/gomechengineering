@@ -2,7 +2,7 @@ import ArrowButton from "./ArrowButton";
 
 const AboutSection = () => {
   return (
-    <section className="w-full py-24 md:py-[200px] px-6 md:px-10 lg:px-[160px] overflow-hidden">
+    <section id="about" className="w-full py-24 md:py-[200px] px-6 md:px-10 lg:px-[160px] overflow-hidden">
       <div className="max-w-[1600px] mx-auto">
         {/* Top content */}
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-[100px]">
@@ -23,7 +23,13 @@ const AboutSection = () => {
               <span className="text-muted-foreground text-base leading-7">
                 Let's Build Something Meaningful Together
               </span>
-              <ArrowButton label="Get in touch" variant="primary" />
+              <a
+                href="https://wa.me/917305946887"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ArrowButton label="Get in touch" variant="primary" />
+              </a>
             </div>
           </div>
         </div>

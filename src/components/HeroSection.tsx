@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <section className="relative w-full bg-dark rounded-b-[100px] overflow-hidden">
+    <section className="relative w-full bg-dark rounded-b-[100px]">
       <div className="relative min-h-[100vh] md:min-h-[750px] lg:min-h-[900px]">
         {/* Background Image */}
         <img

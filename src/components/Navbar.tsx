@@ -16,18 +16,32 @@ const Navbar = () => {
   const location = useLocation();
 
   const handleNavClick = (href: string) => {
-    setMobileOpen(false);
-    if (href.startsWith("/")) {
-      navigate(href);
-    } else if (location.pathname !== "/") {
-      navigate("/" + href);
-    } else {
-      const el = document.querySelector(href);
-      el?.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  setMobileOpen(false);
+
+  // If link is an internal section like #about
+  if (href.startsWith("#")) {
+    if (location.pathname !== "/") {
+          // Navigate to home first, then scroll after rendering
+          navigate("/");
+
+          setTimeout(() => {
+            const el = document.querySelector(href);
+            el?.scrollIntoView({ behavior: "smooth" });
+          }, 50);
+        } else {
+          const el = document.querySelector(href);
+          el?.scrollIntoView({ behavior: "smooth" });
+        }
+        return;
+      }
+
+      // If link is a regular page like /gallery
+      if (href.startsWith("/")) {
+        navigate(href);
+      }
+    };
   return (
-    <nav className=" top-0 left-0 right-0 z-50 bg-gradient-to-b from-white to-red-800 backdrop-blur-md ">
+    <nav className=" top-0 left-0 right-0 z-50 backdrop-blur-md bg-white">
       <div className="max-w-[1600px] mx-auto flex items-center justify-between px-6 md:px-10 lg:px-[160px] h-[122px]">
         {/* Logo */}
         {/* <a href="#home" className="flex flex-col leading-none">
@@ -42,14 +56,13 @@ const Navbar = () => {
             className="h-40 w-auto"
           />
         </a>
-
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.label}>
               <button
                 onClick={() => handleNavClick(link.href)}
-                className="text-white-foreground/80 hover:text-white text-bold font-medium transition-colors bg-transparent border-none cursor-pointer"
+                className="text-white-foreground/80 hover:text-primary text-bold font-medium transition-colors bg-transparent border-none cursor-pointer"
               >
                 {link.label}
               </button>
