@@ -10,6 +10,7 @@ import ProcessSection from "@/components/ProcessSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ImageCarouselSection from "@/components/ImageCarouselSection";
+import ISOSection from "@/components/ISOSection";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
       <CTASection />
       <ProcessSection />
       <ImageCarouselSection />
+      <ISOSection />
       <Footer />
       <WhatsAppButton />
     </main>
