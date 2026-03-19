@@ -89,16 +89,16 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <div className="w-full h-[5px] rounded-[10px] bg-primary" />
         <p className="text-muted-foreground text-base leading-7">
           {/* {project.description} */}
-          <ul className="text-muted-foreground text-base leading-7 space-y-3">
-  {project.description.map((point, index) => (
-    <li key={index} className="flex items-start gap-3">
-      <span className="text-primary font-bold mt-1">✔</span>
-      <span>{point}</span>
-    </li>
-  ))}
-</ul>
+                    <ul className="text-muted-foreground text-base leading-7 space-y-3">
+                      {project.description.map((point, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <span className="text-primary font-bold mt-1">✔</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
         </p>
-        <ArrowButton label="View More Details About the Product Click Here" variant="muted" />
+        <ArrowButton label="Click Here" variant="muted" />
       </div>
     </div>
   );

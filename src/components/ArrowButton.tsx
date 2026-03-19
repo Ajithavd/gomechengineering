@@ -33,7 +33,7 @@ const ArrowButton = ({
 
   return (
     <button
-      className={`inline-flex items-center gap-4 ${bgClass} rounded-full border border-foreground/10 h-[50px] pl-[20px] pr-[8px] group hover:scale-105 hover:shadow-lg transition-all duration-300 ease-out`}
+      className={`inline-flex items-center gap-4 ${bgClass} rounded-full border border-foreground/10 w-[170px] h-[50px] pl-[20px] pr-[8px] group hover:scale-105 hover:shadow-lg transition-all duration-300 ease-out`}
     >
       <span className={`text-sm font-bold ${textClass}`}>{label}</span>
       <span

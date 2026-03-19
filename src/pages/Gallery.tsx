@@ -104,12 +104,12 @@ const Gallery = () => {
                 text-white
               ">
                 <h2 className="text-4xl text-black font-bold mb-4">
-                  Premium Engineering Solutions
+                  Engineering Excellence in Action
                 </h2>
 
                 <p className="text-lg leading-relaxed text-gray-600">
-                  We deliver high-precision CNC machining, fabrication, welding,
-                  and VMC operations using industry-leading technology and craftsmanship.
+                  Explore our gallery showcasing precision engineering, advanced machinery, 
+                  and high-quality manufacturing projects completed by Go Mech Engineering.
                 </p>
 
                 <button className="
@@ -145,9 +145,9 @@ const Gallery = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-foreground font-extrabold text-4xl md:text-[60px] leading-[1.2] tracking-[-1.2px] mt-4"
           >
-            Craftsmanship in
+            Engineering Excellence 
             <br />
-            Every Frame
+            in Every Detail
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -155,7 +155,7 @@ const Gallery = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-muted-foreground text-base md:text-lg leading-7 mt-6 max-w-[600px] mx-auto"
           >
-            A visual journey through our precision engineering projects, craftsmanship, and industrial excellence.
+            Explore a visual showcase of our precision manufacturing, advanced machinery, and expertly crafted engineering projects that reflect our commitment to quality, innovation, and industrial excellence.
           </motion.p>
         </div>
       </section>

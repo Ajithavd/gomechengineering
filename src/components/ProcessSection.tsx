@@ -3,25 +3,25 @@ const steps = [
     num: "01",
     title: "Precision & Accuracy",
     description:
-      "High-tolerance machining with consistent quality standards, ensuring every part meets exact specifications.High-tolerance machining with consistent quality standards, ensuring every part meets exact specifications.High-tolerance machining with consistent quality standards.",
+      "High-tolerance machining ensuring consistent quality, exact specifications, and reliable performance across every component produced.",
   },
   {
     num: "02",
     title: "Advance Machinery",
     description:
-      "State-of-the-art CNC equipment with modern controls and automation for efficient, high-quality production.State-of-the-art CNC equipment with modern controls and automation for efficient, high-quality production.State-of-the-art CNC equipment with modern high-quality production high-quality production.",
+      " Modern CNC and VMC machines enabling efficient, accurate, and high-quality production for complex manufacturing requirements.",
   },
   {
     num: "03",
     title: "Skilled Workforce",
     description:
-      "Experienced team dedicated to excellence, continuous training, and problem-solving to meet complex manufacturing needs. Experienced team dedicated to excellence, continuous training, and problem-solving to meet complex manufacturing needs meet complex manufacturing needs.",
+      "Experienced professionals delivering precision, problem-solving, and consistent excellence in handling complex manufacturing challenges effectively.",
   },
   {
     num: "04",
     title: "On-Time Delivery",
     description:
-      "Reliable project timelines and commitments to deliver on schedule.Reliable project timelines and commitments to deliver on schedule.Reliable project timelines and commitments to deliver on schedule.s chedule. Reliable project timelines and commitments to deliver on schedule skill. ",
+      "Streamlined processes ensuring timely project completion with reliability, efficiency, and strong commitment to delivery schedules.",
   },
 ];
 
@@ -41,8 +41,8 @@ const ProcessSection = () => {
           </div>
           <div className="lg:w-1/2 flex items-center">
             <p className="text-foreground font-bold text-xl md:text-[30px] leading-[42px]">
-              We combine precision engineering, advanced machinery, and skilled expertise to deliver reliable manufacturing 
-              solutions that meet the highest industrial standards.
+              Combining advanced machinery, precision engineering, and expert craftsmanship to deliver reliable, 
+              high-quality manufacturing solutions that meet the highest industrial standards.
             </p>
           </div>
         </div>
@@ -52,12 +52,12 @@ const ProcessSection = () => {
           {steps.map((step) => (
             <div
               key={step.num}
-              className="bg-background rounded-[30px] p-10 flex flex-col h-[350px] md:h-[450px]"
+              className="bg-background rounded-[30px] p-10 flex flex-col h-[350px] md:h-[400px]"
             >
               <span className="text-primary font-extrabold text-[60px] md:text-[80px] leading-none">
                 {step.num}
               </span>
-              <div className="mt-auto">
+              <div className="mt-4 mb-6">
                 <div className="w-full h-[5px] rounded-[10px] bg-primary mb-5" />
                 <h3 className="text-foreground font-extrabold text-xl md:text-2xl leading-7">
                   {step.title}

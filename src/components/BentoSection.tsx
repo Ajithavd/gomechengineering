@@ -17,8 +17,8 @@ const BentoSection = () => {
           </div>
           <div className="lg:w-1/2 flex items-center">
             <p className="text-foreground font-bold text-xl md:text-[30px] leading-[42px]">
-              Modern equipment. Engineered precision.
-              Built to handle complex manufacturing with speed, accuracy, and reliability.
+              Modern equipment powering precision engineering — built to handle complex manufacturing with speed, 
+              accuracy, and reliable performance.
             </p>
           </div>
         </div>
@@ -26,7 +26,7 @@ const BentoSection = () => {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {/* Box 1 - Large with image */}
-          <div className="md:col-span-2 relative h-[400px] md:h-[600px] rounded-[30px] overflow-hidden">
+          <div className="md:col-span-2 relative h-[400px] md:h-[400px] rounded-[30px] overflow-hidden">
             <img
               src="/images/a2.jpeg"
               alt="Strategy First"
@@ -45,29 +45,34 @@ const BentoSection = () => {
           </div>
 
           {/* Box 2 - Orange */}
-          <div className="relative h-[400px] md:h-[600px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10">
-            <div className="w-full h-[5px] rounded-[10px] bg-primary/70 mb-5" />
+          <div className="relative h-[400px] md:h-[400px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10">
             <h3 className="text-foreground font-extrabold text-2xl md:text-[38px] leading-[44px] tracking-[-0.8px]">
                KTM VMC with 4th Axis
             </h3>
+            <div className="w-full h-[5px] rounded-[10px] bg-primary/70 mb-5" />
+
             <p className="text-foreground text-base leading-7 mt-3">
-              Advanced vertical machining center
+              Advanced vertical machining center designed for multi-axis operations, enabling precise machining on multiple sides 
+              in a single setup—improving accuracy, reducing production time, and ensuring high efficiency for complex components .
             </p>
           </div>
 
           {/* Box 3 - Light gray */}
-          <div className="relative h-[400px] md:h-[600px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10">
-            <div className="w-full h-[5px] rounded-[10px] bg-primary mb-5" />
+          <div className="relative h-[400px] md:h-[400px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10">
             <h3 className="text-foreground font-extrabold text-2xl md:text-[40px] leading-[44px] tracking-[-0.8px]">
               KTM CNC Lathe RIG 1200+
             </h3>
+            <div className="w-full h-[5px] rounded-[10px] bg-primary mb-5" />
+
             <p className="text-muted-foreground text-base leading-7 mt-3">
-              Heavy-duty turning operations
+               Heavy-duty CNC lathe engineered for high-precision turning of large and complex components, 
+               ensuring consistent accuracy, smooth finishes, and reliable performance in demanding industrial applications .
+
             </p>
           </div>
 
           {/* Box 4 - Large with image */}
-          <div className="md:col-span-2 relative h-[400px] md:h-[600px] rounded-[30px] overflow-hidden">
+          <div className="md:col-span-2 relative h-[400px] md:h-[400px] rounded-[30px] overflow-hidden">
             <img
               src="/images/a3.jpeg"
               alt="Consistency Across Touchpoints"
@@ -86,7 +91,7 @@ const BentoSection = () => {
           </div>
 
           {/* Box 5 - Large with image */}
-          <div className="md:col-span-2 relative h-[400px] md:h-[600px] rounded-[30px] overflow-hidden">
+          <div className="md:col-span-2 relative h-[400px] md:h-[400px] rounded-[30px] overflow-hidden">
             <img
               src="/images/a1.jpeg"
               alt="Consistency Across Touchpoints"
@@ -105,13 +110,16 @@ const BentoSection = () => {
           </div>
 
           {/* Box 6 - Light gray */}
-          <div className="relative h-[400px] md:h-[600px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10">
-            <div className="w-full h-[5px] rounded-[10px] bg-primary mb-5" />
+          <div className="relative h-[400px] md:h-[400px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10">
             <h3 className="text-foreground font-extrabold text-2xl md:text-[40px] leading-[44px] tracking-[-0.8px]">
               KTM CNC Lathe RIG 500+
             </h3>
+            <div className="w-full h-[5px] rounded-[10px] bg-primary mb-5" />
+
             <p className="text-muted-foreground text-base leading-7 mt-3">
-              Precision turning solutions
+              Compact yet powerful CNC lathe built for precision turning of medium-sized components, 
+              delivering high accuracy, smooth finishes, and efficient performance for both batch and custom production .
+
             </p>
           </div>
 

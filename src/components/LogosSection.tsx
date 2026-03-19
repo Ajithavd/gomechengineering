@@ -55,9 +55,8 @@ const LogosSection = () => {
       <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[160px]">
         <div className="flex flex-col md:flex-row items-center gap-8">
 
-          <p className="text-foreground text-orange-600 text-lg font-bold leading-5 whitespace-nowrap shrink-0">
-            Our Valuable
-            <br />
+          <p className="text-foreground text-orange-600 text-xl font-bold leading-5 whitespace-nowrap shrink-0">
+            
             Clients
           </p>
 

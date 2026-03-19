@@ -3,7 +3,7 @@ import ArrowButton from "./ArrowButton";
 const services = [
   {
     tagline: "Your brand, visually defined.",
-    title: "Brand Identity Design",
+    title: "Identity Design",
     description:
       "Logos, typography, color systems, and complete visual direction.",
     image: "/images/gallery1.jpeg",
@@ -43,8 +43,8 @@ const ServicesSection = () => {
           </div>
           <div className="lg:w-1/2 flex flex-col justify-center gap-8">
             <p className="text-foreground font-bold text-xl md:text-[30px] leading-[42px]">
-              From strategy to visuals, I offer tailored services to help your
-              brand grow with clarity and impact.
+              From strategy to execution, delivering tailored solutions that elevate your brand with clarity, 
+              creativity, and measurable impact.
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <span className="text-muted-foreground text-base leading-7">

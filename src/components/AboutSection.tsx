@@ -8,16 +8,17 @@ const AboutSection = () => {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-[100px]">
           <div className="lg:w-1/2">
             <span className="text-primary font-bold text-[29px] leading-[42px]">
-              WHO WE ARE
-            </span>
-            <h2 className="text-foreground font-extrabold text-4xl md:text-[59px] leading-[1.22] tracking-[-1.2px] mt-4">
               About Go Mech Engineering
+            </span>
+            <h2 className="text-foreground font-extrabold text-4xl md:text-[39px] leading-[1.22] tracking-[-1.2px] mt-4">
+               Trusted Precision Machining & Engineering Solutions
+
             </h2>
           </div>
           <div className="lg:w-1/2 flex flex-col justify-center gap-8">
-            <p className="text-foreground font-bold text-xl md:text-[30px] leading-[42px]">
-              GO MECH ENGINEERING is a precision engineering company based in Chennai, specialized in CNC, VMC, 
-              fabrication & welding services. We serve multiple industrial sectors with a commitment to excellence and innovation.
+            <p className="text-foreground font-bold text-xl md:text-[20px] leading-[32px]">
+              Go Mech Engineering is a precision engineering company specializing in CNC machining, VMC operations, and welding solutions. 
+              Based in Ambattur, Chennai, the company serves industrial and OEM clients across multiple sectors. With modern machinery and skilled expertise, Go Mech Engineering delivers reliable, high-quality components with accuracy, consistency, and timely project execution.
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <span className="text-muted-foreground text-base leading-7">

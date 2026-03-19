@@ -36,7 +36,7 @@ const HeroSection = () => {
           </div>
 
           {/* Feature tags */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 lg:mt-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-72 mt-12 lg:mt-16">
             {[
               { num: "01", label: "CNC" },
               { num: "02", label: "VMC" },
