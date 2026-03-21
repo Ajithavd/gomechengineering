@@ -72,13 +72,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
     <div
       className={`flex flex-col ${
         isLeft ? "lg:flex-row" : "lg:flex-row-reverse"
-      } gap-5 lg:gap-[100px] items-end`}
+      } gap-5 lg:gap-[100px] items-end flex justify-center items-center `}
     >
       <div className="w-full lg:w-[63.75%] overflow-hidden rounded-[30px]">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-[400px] md:h-[600px] lg:h-[500px] object-cover transition-transform duration-500 hover:scale-110"
+          className="w-full h-[300px] md:h-[500px] lg:h-[400px] object-cover transition-transform duration-500 hover:scale-110"
         />
       </div>
       <div className="w-full lg:w-[33%] flex flex-col justify-end gap-5 py-4">
@@ -98,7 +98,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                       ))}
                     </ul>
         </p>
-        <ArrowButton label="Click Here" variant="muted" />
+        {/* <ArrowButton label="Click Here" variant="muted" /> */}
       </div>
     </div>
   );

@@ -24,9 +24,9 @@ const BentoSection = () => {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ">
           {/* Box 1 - Large with image */}
-          <div className="md:col-span-2 relative h-[400px] md:h-[400px] rounded-[30px] overflow-hidden">
+          <div className="md:col-span-2 relative h-[400px] md:h-[500px] rounded-[30px] overflow-hidden">
             <img
               src="/images/a2.jpeg"
               alt="Strategy First"
@@ -45,7 +45,7 @@ const BentoSection = () => {
           </div>
 
           {/* Box 2 - Orange */}
-          <div className="relative h-[400px] md:h-[400px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10">
+          <div className="relative h-[400px] md:h-[500px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10  justify-center items-center">
             <h3 className="text-foreground font-extrabold text-2xl md:text-[38px] leading-[44px] tracking-[-0.8px]">
                KTM VMC with 4th Axis
             </h3>
@@ -58,7 +58,7 @@ const BentoSection = () => {
           </div>
 
           {/* Box 3 - Light gray */}
-          <div className="relative h-[400px] md:h-[400px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10">
+          <div className="relative h-[400px] md:h-[500px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10 justify-center items-center">
             <h3 className="text-foreground font-extrabold text-2xl md:text-[40px] leading-[44px] tracking-[-0.8px]">
               KTM CNC Lathe RIG 1200+
             </h3>
@@ -72,7 +72,7 @@ const BentoSection = () => {
           </div>
 
           {/* Box 4 - Large with image */}
-          <div className="md:col-span-2 relative h-[400px] md:h-[400px] rounded-[30px] overflow-hidden">
+          <div className="md:col-span-2 relative h-[400px] md:h-[500px] rounded-[30px] overflow-hidden">
             <img
               src="/images/a3.jpeg"
               alt="Consistency Across Touchpoints"
@@ -91,7 +91,7 @@ const BentoSection = () => {
           </div>
 
           {/* Box 5 - Large with image */}
-          <div className="md:col-span-2 relative h-[400px] md:h-[400px] rounded-[30px] overflow-hidden">
+          <div className="md:col-span-2 relative h-[400px] md:h-[500px] rounded-[30px] overflow-hidden">
             <img
               src="/images/a1.jpeg"
               alt="Consistency Across Touchpoints"
@@ -110,7 +110,7 @@ const BentoSection = () => {
           </div>
 
           {/* Box 6 - Light gray */}
-          <div className="relative h-[400px] md:h-[400px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10">
+          <div className="relative h-[400px] md:h-[500px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10 justify-center items-center">
             <h3 className="text-foreground font-extrabold text-2xl md:text-[40px] leading-[44px] tracking-[-0.8px]">
               KTM CNC Lathe RIG 500+
             </h3>

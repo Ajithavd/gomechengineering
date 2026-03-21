@@ -56,12 +56,21 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-primary shrink-0" />
                 <a href="mailto:info@gomechengineering.com" className="text-dark-foreground/60 hover:text-primary text-sm transition-colors">
-                  info@gomechengineering.com
+                  info@gomecengineering.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin size={18} className="text-primary shrink-0" />
-                <span className="text-dark-foreground/60 text-sm">Ambattur, Chennai</span>
+
+                <a
+                  href="https://www.google.com/maps?q=NO+563+SHOP+NO+16,+MTH+ROAD,+SIDCO+INDUSTRIAL+ESTATE,+AMBATTUR,+CHENNAI+600098"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-dark-foreground/60 text-sm hover:text-primary transition"
+                >
+                  no 563 shop no 16, mth road, sidco industrial estate
+                  ambattur, chennai - 600098, tamil nadu, india
+                </a>
               </li>
             </ul>
           </div>
@@ -72,7 +81,7 @@ const Footer = () => {
       <div className="border-t border-dark-foreground/10">
         <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[160px] py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-dark-foreground/40 text-sm">
-            © 2025 Go Mech Engineering. All rights reserved.
+            © 2026 Go Mech Engineering. All rights reserved.
           </p>
           <p className="text-primary font-bold text-sm italic">
             Innovating Success, Delivering Excellence.

@@ -81,11 +81,11 @@ const Gallery = () => {
             <div className="grid lg:grid-cols-2 gap-10 items-center">
 
               {/* LEFT: Parallax Image */}
-              <div className="relative w-full h-[80vh] rounded-3xl overflow-hidden shadow-xl">
+              <div className="relative w-full h-[70vh] rounded-3xl overflow-hidden shadow-xl">
                 <div
                   className="parallax w-full h-full"
                   style={{
-                    backgroundImage: "url('/images/hero1.jpg')",
+                    backgroundImage: "url('/images/hero5.jpg')",
                   }}
                 />
 

@@ -90,37 +90,50 @@ const images = [
   "/images/gallery8.png",
   "/images/gallery9.jpeg",
   "/images/gallery10.jpeg",
-  "/images/gallery1.jpeg",
+  // "/images/gallery8.jpeg",
 ];
 
 const ImageCarouselSection = () => {
   const N = images.length;
 
   return (
-    <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen py-24 bg-white overflow-hidden">
-      <div className="text-center mb-1">
-        <h3 className="text-primary font-bold text-[48px]">
-          Our Machinery & Infrastructure
-        </h3>
-      </div>
+    <section className="relative hidden lg:block left-1/2 right-1/2 -mx-[50vw] w-screen py-16 bg-white overflow-hidden">
+  
+  {/* Header */}
+  <div className="text-center max-w-[900px] mx-auto mb-8 px-4">
+    
+    <h3 className="text-primary font-bold text-[42px] leading-tight mb-4">
+      Our Machinery & Infrastructure
+    </h3>
 
-      <div className="scene">
-        <div
-          className="a3d"
-          style={{ ["--n" as any]: N }}
-        >
-          {images.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`Machine ${index}`}
-              className="card"
-              style={{ ["--i" as any]: index }}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+    <p className="text-[18px] text-gray-700 leading-relaxed">
+      Our products showcase <span className="font-semibold text-black">precision engineering</span> and 
+      <span className="font-semibold text-black"> superior craftsmanship</span> across every component. 
+      Designed to meet industrial standards, each piece reflects 
+      <span className="font-semibold text-black"> quality, durability, and accuracy</span>.
+    </p>
+
+  </div>
+
+  {/* Carousel */}
+  <div className="scene mt-4">
+    <div
+      className="a3d"
+      style={{ ["--n" as any]: images.length }}
+    >
+      {images.map((img, index) => (
+        <img
+          key={index}
+          src={img}
+          alt={`Machine ${index}`}
+          className="card"
+          style={{ ["--i" as any]: index }}
+        />
+      ))}
+    </div>
+  </div>
+
+</section>
   );
 };
 
