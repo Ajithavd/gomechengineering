@@ -37,21 +37,22 @@ const projects: Project[] = [
     description: [
       "Turning & milling operations",
       "Tight tolerances",
-      "Batch & custom production",
+      "Protyping Batch Production",
+      "Tool Room Work"
     ],
     image: "/images/hero5.jpg",
     imagePosition: "left",
   },
-  {
-    title: "Metal Fabrication",
-    description: [
-      "Structural & custom fabrication",
-      "Industrial-grade finishing",
-      "Complex assemblies",
-    ],
-    image: "/images/hero6.jpg",
-    imagePosition: "right",
-  },
+  // {
+  //   title: "Metal Fabrication",
+  //   description: [
+  //     "Structural & custom fabrication",
+  //     "Industrial-grade finishing",
+  //     "Complex assemblies",
+  //   ],
+  //   image: "/images/hero6.jpg",
+  //   imagePosition: "right",
+  // },
   {
     title: "Welding Solutions",
     description: [
@@ -60,7 +61,7 @@ const projects: Project[] = [
       "Multiple welding processes",
     ],
     image: "/images/hero7.jpg",
-    imagePosition: "left",
+    imagePosition: "right",
   },
 ];
 
@@ -126,8 +127,8 @@ const ProjectsSection = () => {
           </div>
           <div className="lg:w-1/2 flex items-center">
             <p className="text-foreground font-bold text-xl md:text-[30px] leading-[42px]">
-              Engineered for excellence, our core services integrate precision CNC machining, robust metal fabrication, 
-              and certified welding processes to create reliable solutions for complex industrial applications.
+              Engineered for excellence, our core services integrate precision CNC machining 
+              and welding processes to create reliable solutions for complex industrial applications.
             </p>
           </div>
         </div>

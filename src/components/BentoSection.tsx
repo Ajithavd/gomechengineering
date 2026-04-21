@@ -123,6 +123,38 @@ const BentoSection = () => {
             </p>
           </div>
 
+          {/* Box 7 - Light gray */}
+          <div className="relative h-[400px] md:h-[500px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-end p-10 justify-center items-center">
+            <h3 className="text-foreground font-extrabold text-2xl md:text-[40px] leading-[44px] tracking-[-0.8px]">
+              Tolerance & Precision
+            </h3>
+            <div className="w-full h-[5px] rounded-[10px] bg-primary mb-5" />
+
+            <p className="text-muted-foreground text-base leading-7 mt-3">
+              We aim to maintain high precision machining standards across all components:
+
+            </p>
+          </div>
+
+          {/* Box 8 - Light gray */}
+          <div className="md:col-span-2 relative h-[400px] md:h-[500px] rounded-[30px] overflow-hidden">
+            <img
+              src="/images/a2.jpeg"
+              alt="Consistency Across Touchpoints"
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="absolute bottom-10 left-10 right-10">
+              <div className="w-full h-[5px] rounded-[10px] bg-primary mb-5" />
+              <h3 className="text-dark-foreground font-extrabold text-2xl md:text-[39px] leading-[44px] tracking-[-0.8px]">
+                KTM CNC Lathe RIG 500+
+              </h3>
+              <p className="text-dark-foreground text-base leading-7 mt-3">
+                Precision turning solutions
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
