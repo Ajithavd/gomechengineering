@@ -70,7 +70,7 @@ const BentoSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-center items-center text-center p-6 sm:p-10 order-2 md:order-2"
+            className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-center items-start text-left p-6 sm:p-10 order-2 md:order-2"
           >
             <h3 className="text-foreground font-extrabold text-xl sm:text-2xl md:text-[32px] leading-tight tracking-[-0.8px]">
                KTM VMC with 4th Axis
@@ -88,7 +88,7 @@ const BentoSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-center items-center text-center p-6 sm:p-10 order-4 md:order-3"
+            className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-center items-start text-left p-6 sm:p-10 order-4 md:order-3"
           >
             <h3 className="text-foreground font-extrabold text-xl sm:text-2xl md:text-[32px] leading-tight tracking-[-0.8px]">
               KTM CNC Lathe RIG 1200+
@@ -156,7 +156,7 @@ const BentoSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-center items-center text-center p-6 sm:p-10 order-6 md:order-6"
+            className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-center items-start text-left p-6 sm:p-10 order-6 md:order-6"
           >
             <h3 className="text-foreground font-extrabold text-xl sm:text-2xl md:text-[32px] leading-tight tracking-[-0.8px]">
               KTM CNC Lathe RIG 500+
@@ -174,7 +174,7 @@ const BentoSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-center items-center text-center p-6 sm:p-10 order-8 md:order-7"
+            className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[30px] bg-secondary overflow-hidden flex flex-col justify-center items-start text-left p-6 sm:p-10 order-8 md:order-7"
           >
             <h3 className="text-foreground font-extrabold text-xl sm:text-2xl md:text-[32px] leading-tight tracking-[-0.8px]">
               Tolerance & Precision

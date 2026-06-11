@@ -23,7 +23,7 @@ const projects: Project[] = [
   {
     title: "Welding Solutions",
     description: [
-      "Precision & certified welding",
+      "Precision &  Welding",
       "Durable industrial applications",
       "Multiple welding processes",
     ],
