@@ -10,38 +10,51 @@ const certifications = [
   },
 ];
 
+import { motion } from "framer-motion";
+
 const ISOSection = () => {
   return (
-    <section className="w-full py-16 md:py-[100px] px-6 md:px-10 lg:px-[160px] overflow-hidden">
+    <section className="w-full py-16 md:py-24 lg:py-32 px-6 md:px-12 lg:px-24 overflow-hidden">
       <div className="max-w-[1600px] mx-auto">
 
         {/* Separator */}
-        <div className="w-full h-[5px] rounded-[10px] bg-secondary mb-16 lg:mb-[200px]" />
+        <div className="w-full h-[5px] rounded-[10px] bg-secondary mb-12 lg:mb-24" />
 
         {/* Header */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-[100px] mb-16">
-          <div className="lg:w-1/2">
-            <span className="text-primary font-bold text-[29px] leading-[42px]">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-[100px] mb-12 lg:mb-[80px]">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="lg:w-1/2"
+          >
+            <span className="text-primary font-bold text-xl sm:text-[29px] leading-tight sm:leading-[42px]">
               Certification
             </span>
-            <h2 className="text-foreground font-extrabold text-4xl md:text-[58px] leading-[72px] tracking-[-1.2px] mt-4">
+            <h2 className="text-foreground font-extrabold text-3xl sm:text-4xl md:text-[58px] leading-tight md:leading-[72px] tracking-[-1.2px] mt-4">
               International Quality Standards
             </h2>
-          </div>
+          </motion.div>
 
-          <div className="lg:w-1/2 flex flex-col justify-center gap-8">
-            <p className="text-foreground font-bold text-xl md:text-[30px] leading-[42px]">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+            className="lg:w-1/2 flex flex-col justify-center gap-8"
+          >
+            <p className="text-foreground font-bold text-lg sm:text-xl md:text-[30px] leading-normal md:leading-[42px]">
               Committed to delivering excellence through globally recognized
               ISO-certified quality systems.
             </p>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <span className="text-muted-foreground text-base leading-7">
+              <span className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                 Trusted by Industrial & OEM Clients
               </span>
-              <ArrowButton label="View Certificate" variant="primary" />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Certification Card */}
@@ -52,18 +65,24 @@ const ISOSection = () => {
               className="relative w-full flex justify-center rounded-[30px]"
             >
               {/* Background Image */}
-              <div className="w-full flex justify-center">
-                <div className="relative w-full max-w-[500px] aspect-[9/16] overflow-hidden ">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8 }}
+                className="w-full flex justify-center"
+              >
+                <div className="relative w-full max-w-[280px] sm:max-w-[420px] md:max-w-[500px] aspect-[1229/1742] overflow-hidden shadow-md rounded-2xl border border-gray-100">
 
                     <img
                     src="/images/ISO.jpg"
                     alt="ISO Certification"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                     loading="lazy"
                     />
 
                 </div>
-            </div>
+            </motion.div>
 
               {/* Dark Overlay */}
               <div className="absolute inset-0 " />

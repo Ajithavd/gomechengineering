@@ -1,66 +1,84 @@
+import { motion } from "framer-motion";
 import ArrowButton from "./ArrowButton";
 
 const services = [
   {
-    tagline: "Your brand, visually defined.",
-    title: "Identity Design",
+    tagline: "Technical Excellence",
+    title: "Precision-Driven Manufacturing",
     description:
-      "Logos, typography, color systems, and complete visual direction.",
+      "Delivering high-performance machined components through advanced technology, skilled craftsmanship, and engineering expertise",
     image: "/images/gallery1.jpeg",
   },
   {
-    tagline: "Clarity behind the visuals.",
-    title: "Brand Strategy",
+    tagline: "Consistent Quality",
+    title: "Built to Exceptional Standards",
     description:
-      "Positioning, messaging, and creative direction aligned with your goals.",
+      "Every part is manufactured and inspected to maintain dimensional accuracy, superior finish, and long-term reliability.",
     image: "/images/gallery2.png",
   },
   {
-    tagline: "Ongoing expert guidance.",
-    title: "Creative Consulting",
+    tagline: "Trusted Partnership",
+    title: "Supporting Your Manufacturing Goals",
     description:
-      "Ongoing design support, art direction, and guidance for your brand team.",
+      "Combining technical expertise, responsive service, and reliable delivery to become a dependable extension of your supply chain.",
     image: "/images/gallery3.jpeg",
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section  className="w-full py-16 md:py-[100px] px-6 md:px-10 lg:px-[160px] overflow-hidden">
+    <section className="w-full py-16 md:py-24 lg:py-32 px-6 md:px-12 lg:px-24 overflow-hidden">
       <div className="max-w-[1600px] mx-auto">
         {/* Separator */}
-        <div className="w-full h-[5px] rounded-[10px] bg-secondary mb-16 lg:mb-[200px]" />
+        <div className="w-full h-[5px] rounded-[10px] bg-secondary mb-12 lg:mb-24" />
 
         {/* Header */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-[100px] mb-16">
-          <div className="lg:w-1/2">
-            <span className="text-primary font-bold text-[29px] leading-[42px]">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-[100px] mb-12 lg:mb-[80px]">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="lg:w-1/2"
+          >
+            <span className="text-primary font-bold text-xl sm:text-[29px] leading-tight sm:leading-[42px]">
               Services
             </span>
-            <h2 className="text-foreground font-extrabold text-4xl md:text-[58px] leading-[72px] tracking-[-1.2px] mt-4">
-              What I Can Help You With
+            <h2 className="text-foreground font-extrabold text-3xl sm:text-4xl md:text-[58px] leading-tight md:leading-[72px] tracking-[-1.2px] mt-4">
+              What We Offer
             </h2>
-          </div>
-          <div className="lg:w-1/2 flex flex-col justify-center gap-8">
-            <p className="text-foreground font-bold text-xl md:text-[30px] leading-[42px]">
-              From strategy to execution, delivering tailored solutions that elevate your brand with clarity, 
-              creativity, and measurable impact.
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+            className="lg:w-1/2 flex flex-col justify-center gap-8"
+          >
+            <p className="text-foreground font-bold text-lg sm:text-xl md:text-[30px] leading-normal md:leading-[42px]">
+              From custom design prototyping to batch engineering production, delivering high-tolerance components that meet demanding industrial standards.
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <span className="text-muted-foreground text-base leading-7">
+              <span className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                 Let's Build Something Meaningful Together
               </span>
-              <ArrowButton label="Get in touch" variant="primary" />
+              <a href="#contact">
+                <ArrowButton label="Get in touch" variant="primary" />
+              </a>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {services.map((service) => (
-            <div
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <motion.div
               key={service.title}
-              className="group relative bg-secondary rounded-[30px] p-10 flex flex-col justify-end h-[400px] md:h-[500px] overflow-hidden"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+              className="group relative bg-secondary rounded-[30px] p-8 sm:p-10 flex flex-col justify-end h-[350px] sm:h-[400px] md:h-[500px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               {/* Background Image */}
               <div
@@ -69,21 +87,21 @@ const ServicesSection = () => {
               />
 
               {/* Optional Dark Overlay */}
-              <div className="absolute inset-0 bg-black/30" />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
 
               {/* Content */}
-              <div className="relative">
-                <span className="text-primary font-bold text-xl leading-6 tracking-[-0.4px]">
+              <div className="relative z-10">
+                <span className="text-primary font-bold text-sm sm:text-base tracking-wider uppercase">
                   {service.tagline}
                 </span>
-                <h3 className="text-white font-extrabold text-[30px] leading-9 mt-4">
+                <h3 className="text-white font-extrabold text-xl sm:text-2xl md:text-[30px] leading-tight mt-2 sm:mt-4">
                   {service.title}
                 </h3>
-                <p className="text-white text-sm leading-[22px] mt-4">
+                <p className="text-white/80 text-xs sm:text-sm leading-relaxed mt-2 sm:mt-4">
                   {service.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

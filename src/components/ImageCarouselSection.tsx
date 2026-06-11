@@ -79,6 +79,8 @@
 // export default ImageCarouselSection;
 
 
+import { useRef, useState } from "react";
+
 const images = [
   "/images/gallery1.jpeg",
   "/images/gallery2.png",
@@ -90,50 +92,105 @@ const images = [
   "/images/gallery8.png",
   "/images/gallery9.jpeg",
   "/images/gallery10.jpeg",
-  // "/images/gallery8.jpeg",
 ];
 
 const ImageCarouselSection = () => {
-  const N = images.length;
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDown, setIsDown] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollRef.current) return;
+    setIsDown(true);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDown(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDown(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDown || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // scroll-fast multiplier
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
 
   return (
-    <section className="relative hidden lg:block left-1/2 right-1/2 -mx-[50vw] w-screen py-16 bg-white overflow-hidden">
-  
-  {/* Header */}
-  <div className="text-center max-w-[900px] mx-auto mb-8 px-4">
-    
-    <h3 className="text-primary font-bold text-[42px] leading-tight mb-4">
-      Our Machinery & Infrastructure
-    </h3>
+    <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen py-16 bg-white overflow-hidden">
+      
+      {/* Header */}
+      <div className="text-center max-w-[900px] mx-auto mb-8 px-6">
+        
+        <h3 className="text-primary font-bold text-3xl sm:text-[42px] leading-tight mb-4">
+          Our Machinery & Infrastructure
+        </h3>
 
-    <p className="text-[18px] text-gray-700 leading-relaxed">
-      Our products showcase <span className="font-semibold text-black">precision engineering</span> and 
-      <span className="font-semibold text-black"> superior craftsmanship</span> across every component. 
-      Designed to meet industrial standards, each piece reflects 
-      <span className="font-semibold text-black"> quality, durability, and accuracy</span>.
-    </p>
+        <p className="text-base sm:text-[18px] text-gray-700 leading-relaxed">
+          Our products showcase <span className="font-semibold text-black">precision engineering</span> and 
+          <span className="font-semibold text-black"> superior craftsmanship</span> across every component. 
+          Designed to meet industrial standards, each piece reflects 
+          <span className="font-semibold text-black"> quality, durability, and accuracy</span>.
+        </p>
 
-  </div>
+      </div>
 
-  {/* Carousel */}
-  <div className="scene mt-4">
-    <div
-      className="a3d"
-      style={{ ["--n" as any]: images.length }}
-    >
-      {images.map((img, index) => (
-        <img
-          key={index}
-          src={img}
-          alt={`Machine ${index}`}
-          className="card"
-          style={{ ["--i" as any]: index }}
-        />
-      ))}
-    </div>
-  </div>
+      {/* 3D Carousel for Desktop */}
+      <div className="scene mt-4 hidden lg:flex">
+        <div
+          className="a3d"
+          style={{ ["--n" as any]: images.length }}
+        >
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`Machine ${index}`}
+              className="card"
+              style={{ ["--i" as any]: index }}
+            />
+          ))}
+        </div>
+      </div>
 
-</section>
+      {/* Swipeable / Draggable Carousel for Mobile/Tablet */}
+      <div className="lg:hidden mt-8 px-6">
+        <div 
+          ref={scrollRef}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          className="flex gap-5 overflow-x-auto pb-6 cursor-grab active:cursor-grabbing select-none scrollbar-none"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {images.map((img, index) => (
+            <div key={index} className="w-[260px] sm:w-[320px] shrink-0 pointer-events-none">
+              <img
+                src={img}
+                alt={`Machine ${index}`}
+                className="w-full h-[340px] sm:h-[420px] object-cover rounded-3xl shadow-lg border border-gray-100"
+                loading="lazy"
+                draggable={false}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center gap-2 mt-2">
+          <span className="text-xs font-semibold text-muted-foreground animate-pulse">
+            Drag or swipe left/right to view
+          </span>
+        </div>
+      </div>
+
+    </section>
   );
 };
 

@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const quickLinks = [
   { label: "Home", href: "#home" },
@@ -8,10 +9,29 @@ const quickLinks = [
 ];
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (href.startsWith("#")) {
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          const el = document.querySelector(href);
+          el?.scrollIntoView({ behavior: "smooth" });
+        }, 50);
+      } else {
+        const el = document.querySelector(href);
+        el?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
-    <footer id="contact" className="w-full bg-dark text-dark-foreground">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[160px] py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <footer className="w-full bg-dark text-dark-foreground">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-24 py-12 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
           {/* Brand */}
           <div>
             <div className="mb-4">
@@ -22,7 +42,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-dark-foreground/60 text-sm leading-7 max-w-[360px]">
-              Leading precision engineering company in Chennai, specializing in CNC machining, VMC services, metal fabrication, and industrial welding solutions.
+              Leading precision engineering company in Chennai, specializing in CNC machining, VMC machining and industrial welding solutions.
             </p>
           </div>
 
@@ -34,6 +54,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
                     className="text-dark-foreground/60 hover:text-primary text-sm transition-colors"
                   >
                     {link.label}
@@ -49,14 +70,14 @@ const Footer = () => {
             <ul className="flex flex-col gap-4">
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary shrink-0" />
-                <a href="tel:+919884777798" className="text-dark-foreground/60 hover:text-primary text-sm transition-colors">
-                  +91 9884777798
+                <a href="tel:+916381397949" className="text-dark-foreground/60 hover:text-primary text-sm transition-colors">
+                  +91 63813 97949
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-primary shrink-0" />
                 <a href="mailto:info@gomechengineering.com" className="text-dark-foreground/60 hover:text-primary text-sm transition-colors">
-                  info@gomecengineering.com
+                  info@gomechengineering.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -79,7 +100,7 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div className="border-t border-dark-foreground/10">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[160px] py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-24 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <p className="text-dark-foreground/40 text-sm">
             © 2026 Go Mech Engineering. All rights reserved.
           </p>

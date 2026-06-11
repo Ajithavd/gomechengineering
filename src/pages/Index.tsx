@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ImageCarouselSection from "@/components/ImageCarouselSection";
 import ISOSection from "@/components/ISOSection";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
       <ProcessSection />
       <ImageCarouselSection />
       <ISOSection />
+      <ContactSection />
       <Footer />
       <WhatsAppButton />
     </main>

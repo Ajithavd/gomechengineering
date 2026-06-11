@@ -75,13 +75,13 @@ const Gallery = () => {
     <main className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
 
-      <section className="w-full py-20">
-          <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[160px]">
+      <section className="w-full py-16 md:py-24 lg:py-32 px-6 md:px-12 lg:px-24">
+          <div className="max-w-[1600px] mx-auto">
 
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
               {/* LEFT: Parallax Image */}
-              <div className="relative w-full h-[70vh] rounded-3xl overflow-hidden shadow-xl">
+              <div className="relative w-full h-[35vh] sm:h-[50vh] lg:h-[70vh] rounded-3xl overflow-hidden shadow-xl">
                 <div
                   className="parallax w-full h-full"
                   style={{
@@ -100,14 +100,14 @@ const Gallery = () => {
                 border border-white/20 
                 shadow-[0_8px_30px_rgba(0,0,0,0.3)] 
                 rounded-3xl 
-                p-10 
+                p-6 sm:p-10 
                 text-white
               ">
-                <h2 className="text-4xl text-black font-bold mb-4">
+                <h2 className="text-3xl sm:text-4xl text-black font-bold mb-4">
                   Engineering Excellence in Action
                 </h2>
 
-                <p className="text-lg leading-relaxed text-gray-600">
+                <p className="text-base sm:text-lg leading-relaxed text-gray-600">
                   Explore our gallery showcasing precision engineering, advanced machinery, 
                   and high-quality manufacturing projects completed by Go Mech Engineering.
                 </p>
@@ -129,13 +129,13 @@ const Gallery = () => {
 
 
       {/* Hero */}
-      <section className="pt-[120px] pb-16 px-6 md:px-10 lg:px-[160px]">
+      <section className="pt-28 md:pt-[160px] pb-12 px-6 md:px-12 lg:px-24">
         <div className="max-w-[1600px] mx-auto text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-primary font-bold text-[29px] leading-[42px]"
+            className="text-primary font-bold text-xl sm:text-[29px] leading-tight sm:leading-[42px]"
           >
             Our Gallery
           </motion.span>
@@ -143,7 +143,7 @@ const Gallery = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-foreground font-extrabold text-4xl md:text-[60px] leading-[1.2] tracking-[-1.2px] mt-4"
+            className="text-foreground font-extrabold text-3xl sm:text-4xl md:text-[60px] leading-tight md:leading-[1.2] tracking-[-1.2px] mt-4"
           >
             Engineering Excellence 
             <br />
@@ -153,7 +153,7 @@ const Gallery = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-muted-foreground text-base md:text-lg leading-7 mt-6 max-w-[600px] mx-auto"
+            className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mt-6 max-w-[600px] mx-auto"
           >
             Explore a visual showcase of our precision manufacturing, advanced machinery, and expertly crafted engineering projects that reflect our commitment to quality, innovation, and industrial excellence.
           </motion.p>
@@ -161,9 +161,9 @@ const Gallery = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="px-6 md:px-10 lg:px-[160px] pb-24">
+      <section className="px-6 md:px-12 lg:px-24 pb-24">
         <motion.div
-          className="max-w-[1600px] mx-auto columns-1 md:columns-2 lg:columns-3 gap-5 space-y-5"
+          className="max-w-[1600px] mx-auto columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -172,15 +172,18 @@ const Gallery = () => {
             <motion.div
               key={i}
               variants={itemVariants}
-              className="break-inside-avoid group relative overflow-hidden rounded-[24px] cursor-pointer"
+              className="break-inside-avoid group relative overflow-hidden rounded-[24px] cursor-pointer shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <img
                 src={item.src}
                 alt={item.alt}
-                className="w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  height: i % 3 === 0 ? "500px" : i % 3 === 1 ? "380px" : "440px",
-                }}
+                className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 rounded-[24px] ${
+                  i % 3 === 0 
+                    ? "h-[250px] sm:h-[400px] md:h-[500px]" 
+                    : i % 3 === 1 
+                    ? "h-[200px] sm:h-[300px] md:h-[380px]" 
+                    : "h-[220px] sm:h-[350px] md:h-[440px]"
+                }`}
               />
               {/* Overlay with quote */}
               <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
