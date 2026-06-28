@@ -2,15 +2,31 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ArrowButton from "./ArrowButton";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
+
+/**
+ * TypeScript interface for the contact form state.
+ */
+interface ContactFormData {
+  name: string;
+  phone: string;
+  message: string;
+}
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
+  // Initialize the contact form state using the typed interface.
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     phone: "",
-    requirements: "",
+    message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Track the asynchronous submission loading state to prevent duplicate calls.
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  /**
+   * Typed input change handler for text inputs and textareas.
+   */
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -18,69 +34,106 @@ const ContactSection = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  /**
+   * Typed validation function to verify contact form inputs before API submission.
+   * - Name: must be at least 3 characters.
+   * - Phone: must contain at least 10 digits (letters/special characters ignored).
+   */
+  const validateForm = (data: ContactFormData): boolean => {
+    if (data.name.trim().length < 3) {
+      toast.error("Name must be at least 3 characters long.");
+      return false;
+    }
+
+    // Strip out all non-digit characters to ensure 10 real digits are present
+    const digitsOnly = data.phone.replace(/\D/g, "");
+    if (digitsOnly.length < 10) {
+      toast.error("Contact number must contain at least 10 digits.");
+      return false;
+    }
+
+    return true;
+  };
+
+  /**
+   * Typed form submission handler.
+   * Handles validation, reads secure environment variables, invokes EmailJS SDK,
+   * resets form inputs, and dispatches toast notifications.
+   */
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.phone || !formData.requirements) {
-      toast.error("Please fill in all the details.");
+    // Guard against multiple concurrent form submissions
+    if (isSubmitting) return;
+
+    // Validate name and phone inputs
+    if (!validateForm(formData)) {
       return;
     }
 
     setIsSubmitting(true);
 
-    // To receive emails, generate a free access key from https://web3forms.com/ for info@gomechengineering.com
-    // You can paste the key directly below or use the environment variable VITE_WEB3FORMS_ACCESS_KEY
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY_HERE";
-    const isUuid = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(accessKey.trim());
+    // Retrieve credentials from environment variables only (security requirement).
+    // Note: Vite requires environment variables to begin with the VITE_ prefix to prevent exposing private variables
+    // from the host machine to the client-side JavaScript bundle. Only VITE_ prefixed variables are loaded.
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    if (!isUuid || accessKey === "YOUR_WEB3FORMS_ACCESS_KEY_HERE") {
-      // Graceful local testing fallback
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      toast.success("Message sent successful");
-      setFormData({
-        name: "",
-        phone: "",
-        requirements: "",
+    // Log the environment variables in development mode only to assist with debugging configuration issues.
+    // Note: If you edit your .env file, the dev server must be restarted. Vite loads the environment files once at startup;
+    // any changes to env files require a restart to reload and inject the variables.
+    if (import.meta.env.DEV) {
+      console.log("Full Vite Environment Object (import.meta.env):", import.meta.env);
+      console.log("EmailJS Development Environment Variables:", {
+        VITE_EMAILJS_SERVICE_ID: SERVICE_ID,
+        VITE_EMAILJS_TEMPLATE_ID: TEMPLATE_ID,
+        VITE_EMAILJS_PUBLIC_KEY: PUBLIC_KEY,
       });
-      console.warn(
-        "Web3Forms Access Key not set. Simulated form submission success. To receive real emails to info@gomechengineering.com, set VITE_WEB3FORMS_ACCESS_KEY in your .env file or hardcode it in ContactSection.tsx."
+    }
+
+    // Verify all credentials are present. If missing, fail securely with a console error and user-friendly toast.
+    // EmailJS reads configuration dynamically from these variables to authenticate and route API requests.
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      console.error(
+        "EmailJS configuration error: One or more environment variables (VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY) are missing or not defined."
       );
-      setIsSubmitting(false);
+      toast.error("Contact form is not configured yet. Please try again later.");
+      setIsSubmitting(false); // Fallback handling: re-enable the submit button so user interface doesn't lock up
       return;
     }
 
+    // Prepare parameters matching user's requested template structure
+    const templateParams = {
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      message: formData.message.trim(),
+      website: "Go Mech Engineering",
+    };
+
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: accessKey,
-          subject: `Website Enquiry - ${formData.name}`,
-          from_name: "Go Mech Engineering Website",
-          "Contact Name": formData.name,
-          "Contact Number": formData.phone,
-          "Enquiry": formData.requirements,
-        }),
-      });
+      // Send the email using the EmailJS browser SDK
+      const response = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
+      );
 
-      const data = await response.json();
-
-      if (data.success) {
-        toast.success("Message sent successful");
+      if (response.status === 200) {
+        toast.success("Thank you. Our team will contact you shortly.");
+        // Clear all form fields upon successful delivery
         setFormData({
           name: "",
           phone: "",
-          requirements: "",
+          message: "",
         });
       } else {
-        toast.error(data.message || "Failed to send message.");
+        throw new Error(`EmailJS responded with status code: ${response.status}`);
       }
     } catch (error) {
-      console.error("Error submitting contact form:", error);
-      toast.error("An error occurred while sending the message.");
+      console.error("EmailJS form submission failed:", error);
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -185,19 +238,18 @@ const ContactSection = () => {
                 />
               </div>
 
-              {/* Requirements Input */}
+              {/* Message Input */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="requirements" className="text-xs font-bold text-foreground uppercase tracking-wider">
+                <label htmlFor="message" className="text-xs font-bold text-foreground uppercase tracking-wider">
                   Enquiry
                 </label>
                 <textarea
-                  id="requirements"
-                  name="requirements"
-                  value={formData.requirements}
+                  id="message"
+                  name="message"
+                  value={formData.message}
                   onChange={handleChange}
                   placeholder="Tell us about your requirements..."
                   rows={5}
-                  required
                   disabled={isSubmitting}
                   className="w-full bg-secondary/50 border border-transparent focus:border-primary focus:bg-background text-foreground placeholder:text-muted-foreground text-sm rounded-xl px-4 py-3 outline-none resize-none transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
@@ -209,7 +261,7 @@ const ContactSection = () => {
                 disabled={isSubmitting}
                 className="w-full mt-2 bg-[#0a0a0a] text-white hover:bg-black/90 font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors duration-200 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Sending..." : "Submit \u2192"}
+                {isSubmitting ? "Sending Enquiry..." : "Submit \u2192"}
               </button>
             </form>
           </motion.div>

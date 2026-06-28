@@ -263,4 +263,79 @@ body {
   animation: shine-anim 0.8s ease-in-out forwards;
 }
 
+/* Custom Leaflet popup styling (Apple/SaaS minimal look) */
+.custom-leaflet-popup .leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08) !important;
+  padding: 6px !important;
+  font-family: inherit !important;
+}
+
+.custom-leaflet-popup .leaflet-popup-tip-container {
+  display: block !important;
+}
+
+.custom-leaflet-popup .leaflet-popup-tip {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.custom-leaflet-popup .leaflet-popup-close-button {
+  color: #a3a3a3 !important;
+  font-size: 14px !important;
+  top: 8px !important;
+  right: 8px !important;
+  padding: 4px !important;
+}
+
+.custom-leaflet-popup .leaflet-popup-close-button:hover {
+  color: #171717 !important;
+  background: transparent !important;
+}
+
+/* Branded Leaflet Marker Hover Animations */
+.custom-leaflet-marker:hover .marker-glow {
+  background: rgba(239, 68, 68, 0.3) !important;
+  transform: scale(1.3) !important;
+}
+
+.custom-leaflet-marker:hover .marker-core {
+  transform: scale(1.25) !important;
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.85) !important;
+}
+
+/* Force pointer cursor over map and custom controls exceptions */
+.premium-map-container .leaflet-container,
+.premium-map-container .leaflet-container * {
+  cursor: pointer !important;
+}
+
+.premium-map-container .pointer-events-auto,
+.premium-map-container .pointer-events-auto * {
+  cursor: auto !important;
+}
+
+.premium-map-container button,
+.premium-map-container button * {
+  cursor: pointer !important;
+}
+
+/* Popup card transitions and hover lift effects */
+.custom-leaflet-popup .leaflet-popup-content-wrapper {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
+}
+
+.custom-leaflet-popup:hover .leaflet-popup-content-wrapper {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16) !important;
+}
+
+
 

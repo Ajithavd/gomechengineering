@@ -6,6 +6,7 @@ const quickLinks = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
+  { label: "Find Us", href: "#map" },
 ];
 
 const Footer = () => {
@@ -44,6 +45,10 @@ const Footer = () => {
             <p className="text-dark-foreground/60 text-sm leading-7 max-w-[360px]">
               Leading precision engineering company in Chennai, specializing in CNC machining, VMC machining and industrial welding solutions.
             </p>
+            <div className="mt-4 flex flex-col gap-1.5 text-xs text-dark-foreground/50 font-medium">
+              <p>GST Registration Number : 33BGDPB9189B2ZM</p>
+              <p>MSME Reg no : UDYAM-TN-02-0182901</p>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -80,18 +85,28 @@ const Footer = () => {
                   info@gomechengineering.com
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <MapPin size={18} className="text-primary shrink-0" />
-
-                <a
-                  href="https://www.google.com/maps?q=NO+563+SHOP+NO+16,+MTH+ROAD,+SIDCO+INDUSTRIAL+ESTATE,+AMBATTUR,+CHENNAI+600098"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-dark-foreground/60 text-sm hover:text-primary transition"
-                >
-                  no 563 shop no 16, mth road, sidco industrial estate
-                  ambattur, chennai - 600098, tamil nadu, india
-                </a>
+              <li className="flex items-start gap-3">
+                <MapPin size={18} className="text-primary shrink-0 mt-1" />
+                <div className="flex flex-col text-left">
+                  <a
+                    href="#map"
+                    onClick={(e) => handleNavClick(e, "#map")}
+                    className="text-dark-foreground font-semibold text-sm hover:text-primary transition"
+                  >
+                    Location / Address
+                  </a>
+                  <a
+                    href="#map"
+                    onClick={(e) => handleNavClick(e, "#map")}
+                    className="text-dark-foreground/60 text-sm hover:text-primary transition mt-1 leading-relaxed"
+                  >
+                    No. 563 Shop No. 16, MTH Road,
+                    <br />
+                    SIDCO Industrial Estate, Ambattur,
+                    <br />
+                    Chennai - 600098, Tamil Nadu, India
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
