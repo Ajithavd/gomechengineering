@@ -21,7 +21,7 @@ const galleryItems = [
   },
   {
     src: "/images/gallery4.png",
-    alt: "Metal Fabrication",
+    alt: "Industrial",
     quote: "Built with strength. Designed with purpose.",
   },
   {

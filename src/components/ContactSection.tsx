@@ -161,7 +161,7 @@ const ContactSection = () => {
               Consultation
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mt-2 max-w-[550px]">
-              Whether you need high-precision CNC machining, vertical milling operations (VMC), custom metal fabrication, or industrial welding solutions, Go Mech Engineering is ready to bring your vision to life.
+              Whether you need high-precision CNC machining, VMC machining and industrial welding solutions Go Mech Engineering is ready to bring your vision to life.
             </p>
 
             {/* Info details */}

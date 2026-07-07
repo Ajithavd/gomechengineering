@@ -212,7 +212,7 @@ const MapSection = () => {
                   <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#EF4444] transition-all duration-300 group-hover:w-full" />
                 </h4>
                 <p className="text-xs text-muted-foreground font-medium mb-2 leading-relaxed">
-                  Precision CNC Machining & Fabrication
+                  CNC MILLING & TURNING SOLUTIONS
                 </p>
                 <div className="border-t border-secondary my-1.5" />
                 <p className="text-xs text-foreground/80 leading-relaxed font-semibold">

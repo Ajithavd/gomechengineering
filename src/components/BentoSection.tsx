@@ -9,63 +9,55 @@ interface SpecRow {
   isHeader?: boolean;
 }
 
-interface VmcSpecRow {
-  desc: string;
-  unit?: string;
-  bt40?: string;
-  bt50?: string;
-  isHeader?: boolean;
-}
-
-const vmcSpecs: VmcSpecRow[] = [
+const vmcSpecs: SpecRow[] = [
   // CAPACITY Group
-  { desc: "CAPACITY", isHeader: true },
-  { desc: "Table Longitudinal Travel (X-Axis Stroke)", unit: "mm", bt40: "1100", bt50: "1100" },
-  { desc: "Table Cross Travel (Y-Axis Stroke)", unit: "mm", bt40: "700", bt50: "700" },
-  { desc: "Head Stock Travel (Z-Axis Stroke)", unit: "mm", bt40: "700", bt50: "700" },
-  { desc: "Spindle Nose Face To Table Top", unit: "mm", bt40: "150 - 850", bt50: "150 - 850" },
-  { desc: "Distance From Floor to Table", unit: "mm", bt40: "950", bt50: "950" },
-  { desc: "Spindle Center - Z Cover Front Distance", unit: "mm", bt40: "710", bt50: "710" },
+  { desc: "CAPACITY", isHeader: true, unit: "", value: "" },
+  { desc: "Table Longitudinal Travel (X-Axis Stroke)", unit: "mm", value: "1100" },
+  { desc: "Table Cross Travel (Y-Axis Stroke)", unit: "mm", value: "700" },
+  { desc: "Head Stock Travel (Z-Axis Stroke)", unit: "mm", value: "700" },
+  { desc: "Spindle Nose Face To Table Top", unit: "mm", value: "150 - 850" },
+  { desc: "Distance From Floor to Table", unit: "mm", value: "950" },
+  { desc: "Spindle Center - Z Cover Front Distance", unit: "mm", value: "710" },
 
   // SPINDLE Group
-  { desc: "SPINDLE", isHeader: true },
-  { desc: "Taper", unit: "Type", bt40: "BT-40", bt50: "BT-50" },
-  { desc: "Speed Standard", unit: "RPM", bt40: "8000", bt50: "6000" },
-  { desc: "Spindle Motor Power 15 min./cont. (Siemens)", unit: "kW", bt40: "15 / 11", bt50: "18.5 / 15" },
-  { desc: "Spindle Torque 15 min./cont. (Siemens)", unit: "Nm", bt40: "106 / 70", bt50: "107 / 72" },
-  { desc: "Spindle Motor Power 15 min./cont. (Fanuc + Mitsubishi)", unit: "kW", bt40: "15 / 11", bt50: "18.5 / 15" },
-  { desc: "Spindle Torque 15 min./cont. (Fanuc + Mitsubishi)", unit: "Nm", bt40: "95 / 52", bt50: "118 / 95" },
+  { desc: "SPINDLE", isHeader: true, unit: "", value: "" },
+  { desc: "Taper", unit: "Type", value: "BT-40" },
+  { desc: "Speed Standard", unit: "RPM", value: "8000" },
+  { desc: "Spindle Motor Power 15 min./cont. (Siemens)", unit: "kW", value: "15 / 11" },
+  { desc: "Spindle Torque 15 min./cont. (Siemens)", unit: "Nm", value: "106 / 70" },
+  { desc: "Spindle Motor Power 15 min./cont. (Fanuc + Mitsubishi)", unit: "kW", value: "15 / 11" },
+  { desc: "Spindle Torque 15 min./cont. (Fanuc + Mitsubishi)", unit: "Nm", value: "95 / 52" },
   
   // FEED RATE Group
-  { desc: "FEED RATE", isHeader: true },
-  { desc: "Maximum Cutting Feed Rate (X/Y/Z)", unit: "mm/min", bt40: "10000", bt50: "10000" },
-  { desc: "Rapid Feed Rate (X/Y/Z)", unit: "mm/min", bt40: "24000", bt50: "24000" },
+  { desc: "FEED RATE", isHeader: true, unit: "", value: "" },
+  { desc: "Maximum Cutting Feed Rate (X/Y/Z)", unit: "mm/min", value: "10000" },
+  { desc: "Rapid Feed Rate (X/Y/Z)", unit: "mm/min", value: "24000" },
   
   // TABLE Group
-  { desc: "TABLE", isHeader: true },
-  { desc: "Table Size", unit: "mm", bt40: "1300 × 700", bt50: "1300 × 700" },
-  { desc: "T-Slot (No / Size / Pitch)", unit: "mm", bt40: "5 / 18 / 125", bt50: "5 / 18 / 125" },
-  { desc: "Maximum Load On Table", unit: "kg", bt40: "1200", bt50: "1200" },
+  { desc: "TABLE", isHeader: true, unit: "", value: "" },
+  { desc: "Table Size", unit: "mm", value: "1300 × 700" },
+  { desc: "T-Slot (No / Size / Pitch)", unit: "mm", value: "5 / 18 / 125" },
+  { desc: "Maximum Load On Table", unit: "kg", value: "1200" },
   
   // ATC Group
-  { desc: "ATC (Automatic Tool Changer)", isHeader: true },
-  { desc: "Tool Change System", unit: "Type", bt40: "Dual Arm", bt50: "Dual Arm" },
-  { desc: "Tool Storage Capacity (Std.)", unit: "Nos.", bt40: "24", bt50: "20" },
-  { desc: "Pull Stud", unit: "Type", bt40: "45 Degree", bt50: "45 Degree" },
-  { desc: "Max. Tool Dia With All Pockets Full", unit: "mm", bt40: "80", bt50: "125" },
-  { desc: "Max. Tool Dia Adjacent Pocket Empty", unit: "mm", bt40: "125", bt50: "200" },
-  { desc: "Max. Tool Length", unit: "mm", bt40: "250", bt50: "350" },
-  { desc: "Max. Tool Weight", unit: "kg", bt40: "8", bt50: "15" },
-  { desc: "Tool to Tool Time", unit: "sec", bt40: "2", bt50: "3" },
+  { desc: "ATC (Automatic Tool Changer)", isHeader: true, unit: "", value: "" },
+  { desc: "Tool Change System", unit: "Type", value: "Dual Arm" },
+  { desc: "Tool Storage Capacity (Std.)", unit: "Nos.", value: "24" },
+  { desc: "Pull Stud", unit: "Type", value: "45 Degree" },
+  { desc: "Max. Tool Dia With All Pockets Full", unit: "mm", value: "80" },
+  { desc: "Max. Tool Dia Adjacent Pocket Empty", unit: "mm", value: "125" },
+  { desc: "Max. Tool Length", unit: "mm", value: "250" },
+  { desc: "Max. Tool Weight", unit: "kg", value: "8" },
+  { desc: "Tool to Tool Time", unit: "sec", value: "2" },
   
   // OTHERS Group
-  { desc: "OTHERS", isHeader: true },
-  { desc: "Positioning Repeatability X/Y/Z", unit: "mm", bt40: "±0.005", bt50: "±0.005" },
-  { desc: "Positioning Accuracy X/Y/Z", unit: "mm", bt40: "0.008", bt50: "0.008" },
-  { desc: "Weight (Approx.)", unit: "kg", bt40: "7500", bt50: "8500" },
-  { desc: "Lubrication Tank Capacity", unit: "ltr", bt40: "3", bt50: "3" },
-  { desc: "Coolant Tank Capacity (Approx.)", unit: "ltr", bt40: "400", bt50: "400" },
-  { desc: "Machine Total Overall Size with Guard (Approx.) (L × W × H)", unit: "mm", bt40: "2850 × 2850 × 2900", bt50: "2850 × 2850 × 2900" },
+  { desc: "OTHERS", isHeader: true, unit: "", value: "" },
+  { desc: "Positioning Repeatability X/Y/Z", unit: "mm", value: "±0.005" },
+  { desc: "Positioning Accuracy X/Y/Z", unit: "mm", value: "0.008" },
+  { desc: "Weight (Approx.)", unit: "kg", value: "7500" },
+  { desc: "Lubrication Tank Capacity", unit: "ltr", value: "3" },
+  { desc: "Coolant Tank Capacity (Approx.)", unit: "ltr", value: "400" },
+  { desc: "Machine Total Overall Size with Guard (Approx.) (L × W × H)", unit: "mm", value: "2850 × 2850 × 2900" },
 ];
 
 const axisSpecs: SpecRow[] = [
@@ -268,13 +260,19 @@ const BentoSection = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 sm:right-10">
-              <div className="w-full h-[5px] rounded-[10px] bg-primary mb-3 sm:mb-5" />
               <h3 className="text-dark-foreground font-extrabold text-xl sm:text-2xl md:text-[39px] leading-tight tracking-[-0.8px]">
                 KTM VMC with 4th Axis
               </h3>
-              <p className="text-dark-foreground/90 text-sm sm:text-base leading-relaxed mt-2 sm:mt-3">
+              <p className="text-dark-foreground/90 text-sm sm:text-base leading-relaxed mt-1 sm:mt-2">
                 Advanced vertical machining center
               </p>
+              <div className="w-full h-[5px] rounded-[10px] bg-primary my-3 sm:my-5" />
+              <div className="text-dark-foreground font-extrabold text-lg sm:text-xl md:text-2xl lg:text-[39px] leading-tight tracking-[-0.8px] uppercase flex flex-wrap items-baseline gap-x-3">
+                <span>UCAM</span>
+                <span className="text-xs sm:text-sm md:text-base font-semibold tracking-wider text-dark-foreground/80 normal-case">
+                  Ø320 LARGE BORE ROTARY TABLE MODEL : ULBR-320
+                </span>
+              </div>
             </div>
           </motion.div>
 
@@ -527,7 +525,6 @@ const BentoSection = () => {
                           <th className="py-3 px-4">Description</th>
                           <th className="py-3 px-4">UOM</th>
                           <th className="py-3 px-4 text-right">BT-40</th>
-                          <th className="py-3 px-4 text-right">BT-50</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-border/40 text-xs sm:text-sm">
@@ -535,7 +532,7 @@ const BentoSection = () => {
                           if (row.isHeader) {
                             return (
                               <tr key={idx} className="bg-primary/10 border-l-4 border-primary">
-                                <td colSpan={4} className="py-3 px-4 font-bold text-foreground uppercase tracking-wider text-xs sm:text-sm">
+                                <td colSpan={3} className="py-3 px-4 font-bold text-foreground uppercase tracking-wider text-xs sm:text-sm">
                                   {row.desc}
                                 </td>
                               </tr>
@@ -545,8 +542,7 @@ const BentoSection = () => {
                             <tr key={idx} className="hover:bg-primary/5 transition-colors">
                               <td className="py-2.5 px-4 font-medium text-foreground">{row.desc}</td>
                               <td className="py-2.5 px-4 text-muted-foreground">{row.unit}</td>
-                              <td className="py-2.5 px-4 text-right font-semibold text-foreground">{row.bt40}</td>
-                              <td className="py-2.5 px-4 text-right font-semibold text-foreground">{row.bt50}</td>
+                              <td className="py-2.5 px-4 text-right font-semibold text-foreground">{row.value}</td>
                             </tr>
                           );
                         })}
