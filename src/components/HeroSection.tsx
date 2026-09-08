@@ -6,7 +6,7 @@ const HeroSection = () => {
       <div className="relative min-h-[100vh] md:min-h-[750px] lg:min-h-[900px] ">
         {/* Background Image */}
         <img
-          src="/images/imgs1.png"
+          src={`${import.meta.env.BASE_URL}images/imgs1.png`}
           alt="Portfolio background"
           className="absolute inset-0 w-full h-full object-cover "
         />

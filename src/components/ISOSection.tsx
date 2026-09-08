@@ -6,7 +6,7 @@ const certifications = [
     // title: "ISO 9001:2015 Certified",
     // description:
     //   "Certified quality management systems ensuring precision, consistency, and reliability across all operations.",
-    image: "/images/iso-certificate.jpg",
+    image: `${import.meta.env.BASE_URL}images/ISO.jpg`,
   },
 ];
 
@@ -75,7 +75,7 @@ const ISOSection = () => {
                 <div className="relative w-full max-w-[280px] sm:max-w-[420px] md:max-w-[500px] aspect-[1229/1742] overflow-hidden shadow-md rounded-2xl border border-gray-100">
 
                     <img
-                    src="/images/ISO.jpg"
+                    src={`${import.meta.env.BASE_URL}images/ISO.jpg`}
                     alt="ISO Certification"
                     className="w-full h-full object-cover"
                     loading="lazy"

@@ -5,47 +5,47 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 const galleryItems = [
   {
-    src: "/images/gallery1.jpeg",
+    src: `${import.meta.env.BASE_URL}images/gallery1.jpeg`,
     alt: "Dream Area Project",
     quote: "Precision is not just a goal — it's our standard.",
   },
   {
-    src: "/images/gallery2.png",
+    src: `${import.meta.env.BASE_URL}images/gallery2.png`,
     alt: "CNC Machining",
     quote: "Engineering tomorrow's solutions, today.",
   },
   {
-    src: "/images/gallery3.jpeg",
+    src: `${import.meta.env.BASE_URL}images/gallery3.jpeg`,
     alt: "Orange Blox Project",
     quote: "Where innovation meets craftsmanship.",
   },
   {
-    src: "/images/gallery4.png",
+    src: `${import.meta.env.BASE_URL}images/gallery4.png`,
     alt: "Industrial",
     quote: "Built with strength. Designed with purpose.",
   },
   {
-    src: "/images/gallery5.jpeg",
+    src: `${import.meta.env.BASE_URL}images/gallery5.jpeg`,
     alt: "Nova Scene Project",
     quote: "Every detail matters. Every weld counts.",
   },
   {
-    src: "/images/gallery6.png",
+    src: `${import.meta.env.BASE_URL}images/gallery6.png`,
     alt: "Industrial Welding",
     quote: "Turning raw materials into masterpieces.",
   },
   {
-    src: "/images/gallery7.jpeg",
+    src: `${import.meta.env.BASE_URL}images/gallery7.jpeg`,
     alt: "Strategy First",
     quote: "Quality that speaks for itself.",
   },
   {
-    src: "/images/gallery8.png",
+    src: `${import.meta.env.BASE_URL}images/gallery8.png`,
     alt: "Consistency",
     quote: "Consistency across every touchpoint.",
   },
   {
-    src: "/images/gallery9.jpeg",
+    src: `${import.meta.env.BASE_URL}images/gallery9.jpeg`,
     alt: "Go Mech Engineering",
     quote: "Innovating Success, Delivering Excellence.",
   },
@@ -85,7 +85,7 @@ const Gallery = () => {
                 <div
                   className="parallax w-full h-full"
                   style={{
-                    backgroundImage: "url('/images/hero5.jpg')",
+                    backgroundImage: `url('${import.meta.env.BASE_URL}images/hero5.jpg')`,
                   }}
                 />
 

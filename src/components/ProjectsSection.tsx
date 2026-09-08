@@ -17,7 +17,7 @@ const projects: Project[] = [
       "Protyping Batch Production",
       "Tool Room Work"
     ],
-    image: "/images/hero5.jpg",
+    image: `${import.meta.env.BASE_URL}images/hero5.jpg`,
     imagePosition: "left",
   },
   {
@@ -27,7 +27,7 @@ const projects: Project[] = [
       "Durable industrial applications",
       "Multiple welding processes",
     ],
-    image: "/images/hero7.jpg",
+    image: `${import.meta.env.BASE_URL}images/hero7.jpg`,
     imagePosition: "right",
   },
 ];

@@ -82,16 +82,16 @@
 import { useRef, useState } from "react";
 
 const images = [
-  "/images/gallery1.jpeg",
-  "/images/gallery2.png",
-  "/images/gallery3.jpeg",
-  "/images/gallery4.png",
-  "/images/gallery5.jpeg",
-  "/images/gallery6.png",
-  "/images/gallery7.jpeg",
-  "/images/gallery8.png",
-  "/images/gallery9.jpeg",
-  "/images/gallery10.jpeg",
+  `${import.meta.env.BASE_URL}images/gallery1.jpeg`,
+  `${import.meta.env.BASE_URL}images/gallery2.png`,
+  `${import.meta.env.BASE_URL}images/gallery3.jpeg`,
+  `${import.meta.env.BASE_URL}images/gallery4.png`,
+  `${import.meta.env.BASE_URL}images/gallery5.jpeg`,
+  `${import.meta.env.BASE_URL}images/gallery6.png`,
+  `${import.meta.env.BASE_URL}images/gallery7.jpeg`,
+  `${import.meta.env.BASE_URL}images/gallery8.png`,
+  `${import.meta.env.BASE_URL}images/gallery9.jpeg`,
+  `${import.meta.env.BASE_URL}images/gallery10.jpeg`,
 ];
 
 const ImageCarouselSection = () => {

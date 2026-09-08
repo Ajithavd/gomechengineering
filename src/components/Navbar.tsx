@@ -48,7 +48,7 @@ const Navbar = () => {
         {/* Left: Logo */}
         <a href="#home" className="flex items-center shrink-0">
           <img
-            src="images/mainlogo.png"
+            src={`${import.meta.env.BASE_URL}images/mainlogo.png`}
             alt="GO MECH Engineering Logo"
             className="h-24 md:h-36 lg:h-44 w-auto object-contain transition-all duration-300"
           />

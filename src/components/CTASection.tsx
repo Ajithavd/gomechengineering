@@ -9,7 +9,7 @@ const CTASection = () => {
 
       <div className="relative rounded-b-[40px] md:rounded-b-[80px] lg:rounded-b-[100px] bg-dark overflow-hidden min-h-[480px] sm:min-h-[600px] md:min-h-[700px]">
         <img
-          src="/images/hero-bg.jpg"
+          src={`${import.meta.env.BASE_URL}images/hero1.jpg`}
           alt="CTA background"
           className="absolute inset-0 w-full h-full object-cover"
         />

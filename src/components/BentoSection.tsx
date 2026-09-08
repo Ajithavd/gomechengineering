@@ -254,7 +254,7 @@ const BentoSection = () => {
             title="Click to view specifications"
           >
             <img
-              src="/images/a2.jpeg"
+              src={`${import.meta.env.BASE_URL}images/a2.jpeg`}
               alt="KTM VMC with 4th Axis"
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
             />
@@ -348,7 +348,7 @@ const BentoSection = () => {
             title="Click to view specifications"
           >
             <img
-              src="/images/a3.jpeg"
+              src={`${import.meta.env.BASE_URL}images/a3.jpeg`}
               alt="KTM CNC Lathe RIG 1200+"
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
             />
@@ -375,7 +375,7 @@ const BentoSection = () => {
             title="Click to view specifications"
           >
             <img
-              src="/images/a1.jpeg"
+              src={`${import.meta.env.BASE_URL}images/a1.jpeg`}
               alt="KTM CNC Lathe RIG 500+"
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
             />
@@ -447,7 +447,7 @@ const BentoSection = () => {
             className="md:col-span-2 relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[30px] overflow-hidden group order-7 md:order-8 shadow-sm"
           >
             <img
-              src="/images/pr4.png"
+              src={`${import.meta.env.BASE_URL}images/pr4.png`}
               alt="Precision Quality Control"
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
             />

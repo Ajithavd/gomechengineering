@@ -7,21 +7,21 @@ const services = [
     title: "Precision-Driven Manufacturing",
     description:
       "Delivering high-performance machined components through advanced technology, skilled craftsmanship, and engineering expertise",
-    image: "/images/gallery1.jpeg",
+    image: `${import.meta.env.BASE_URL}images/gallery1.jpeg`,
   },
   {
     tagline: "Consistent Quality",
     title: "Built to Exceptional Standards",
     description:
       "Every part is manufactured and inspected to maintain dimensional accuracy, superior finish, and long-term reliability.",
-    image: "/images/gallery2.png",
+    image: `${import.meta.env.BASE_URL}images/gallery2.png`,
   },
   {
     tagline: "Trusted Partnership",
     title: "Supporting Your Manufacturing Goals",
     description:
       "Combining technical expertise, responsive service, and reliable delivery to become a dependable extension of your supply chain.",
-    image: "/images/gallery3.jpeg",
+    image: `${import.meta.env.BASE_URL}images/gallery3.jpeg`,
   },
 ];
 
